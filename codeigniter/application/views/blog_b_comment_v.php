@@ -3,12 +3,12 @@
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <!-- Bootstarp-css -->
-  <link rel="stylesheet" type="text/css" href="Public/css/bootstrap.min.css">
-  <!-- Flat UI-css -->
-  <link rel="stylesheet" type="text/css" href="Public/css/flat-ui.min.css">
-  <!-- Mycss -->
-  <link rel="stylesheet" type="text/css" href="Public/css/style.css">
+	<!-- Bootstarp-css -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/bootstrap.min.css");?>">
+	<!-- Flat UI-css -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/flat-ui.min.css");?>">
+	<!-- Mycss -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/style.css");?>">
 <title>后台管理-评论页面</title>
 
 </head>
@@ -23,8 +23,6 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <!--文章-->
-            <li class="active"><a href="#">文章</a></li>
             <!--个人-->
             <li><a href="/codeigniter/index.php/blog_user/user/<?php echo $session; ?>">个人</a></li>
           </ul>
@@ -47,7 +45,7 @@
     <?php }else{?>          
               <div class="nav-login">
                 <ul class="nav navbar-nav navbar-right">              
-                  <?php echo "您好，:".$uname['uname'];?>
+                  <?php echo "您好，".$uname['uname'];?>
                 <button type="button" class="btn btn-success"><a href="/codeigniter/index.php/blog_loginout/loginout" class="co-white">退出</a></button>
                   </ul>
               </div>
@@ -94,23 +92,23 @@
             		<td class="col-md-1"><?php echo $comment[$id]['c_id'];?></td>
             		<td class="col-md-2"><?php echo substr($comment[$id]['c_content'],0,150);?></td>
             		<td class="col-md-1"><form action="<?php echo "/codeigniter/index.php/blog_b/delete_comment/".$comment[$id]['id'];?>" method="post">
-            		<button type="submit" name="sub_del" class="btn btn-danger"  data-placement="top" data-toggle="tooltip" title="确定删除这条评论?">删除</button></form></td>
+            		<input class="btn btn-danger" data-placement="top" data-toggle="tooltip" title="确定删除这条评论?" name="sub_del" type="submit" value="删除" /></form></td>
             		<td class="col-md-3"><form action="<?php echo "/codeigniter/index.php/blog_b/change_comment/".$comment[$id]['id'];?>" method="post">
             		<textarea name="comment" rows="3" cols="50" class="form-control"></textarea>
                 <br/>
-                <button type="submit" name="sub_ch" class="btn btn-info">修改评论</button></form></td>
+                <input class="btn btn-info" name="sub_ch" type="submit" value="修改评论" /></form></td>
             	</tr>	
             	<?php }?>	
         </tbody>
    </table>
 </div>
-    <!--jquery2.1.4-->
-    <script type="text/javascript" src="Public/js/jquery.min.js"></script>
-    <!--bootstrap-->
-    <script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
-    <!--flat-ui-->
-    <script type="text/javascript" src="Public/js/flat-ui.min.js"></script>
-    <!-- MyJS -->
-    <script type="text/javascript" src="Public/js/main.js"></script>
+		<!--jquery2.1.4-->
+		<script type="text/javascript" src="<?php echo base_url("Public/js/jquery.min.js");?>"></script>
+		<!--bootstrap-->
+		<script type="text/javascript" src="<?php echo base_url("Public/js/bootstrap.min.js");?>"></script>
+		<!--flat-ui-->
+		<script type="text/javascript" src="<?php echo base_url("Public/js/flat-ui.min.js");?>"></script>
+		<!-- MyJS -->
+		<script type="text/javascript" src="<?php echo base_url("Public/js/main.js");?>"></script>
 </body>
 </html>

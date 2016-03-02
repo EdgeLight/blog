@@ -4,11 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<!-- Bootstarp-css -->
-	<link rel="stylesheet" type="text/css" href="Public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/bootstrap.min.css");?>">
 	<!-- Flat UI-css -->
-	<link rel="stylesheet" type="text/css" href="Public/css/flat-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/flat-ui.min.css");?>">
 	<!-- Mycss -->
-	<link rel="stylesheet" type="text/css" href="Public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/style.css");?>">
 <title>用户个人中心</title>
 </head>
 <body>
@@ -22,8 +22,6 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <!--文章-->
-            <li class="active"><a href="#">文章</a></li>
             <!--个人-->
             <li><a href="/codeigniter/index.php/blog_user/user/<?php echo $session; ?>">个人</a></li>
           </ul>
@@ -46,7 +44,7 @@
 		<?php }else{?>          
 		          <div class="nav-login">
 			          <ul class="nav navbar-nav navbar-right">              
-				          <?php echo "您好，:".$uname['uname'];?>
+				          <?php echo "您好，".$uname['uname'];?>
 			          <button type="button" class="btn btn-success"><a href="/codeigniter/index.php/blog_loginout/loginout" class="co-white">退出</a></button>
 		              </ul>
 		          </div>
@@ -56,6 +54,7 @@
       </nav>
      <!-- 导航栏 -->
 
+请先<a href="/codeigniter/index.php/blog_login/login" >登录</a>，登录后才能设置用户信息。
 
 <br>
 <p>用户名：<?php echo $uname['uname'];?></p>
@@ -67,7 +66,7 @@
 <span><label for="nickname">修改昵称：
 <input type="text" name="nickname" class="form-control" id="nickname" value="<?php echo $nickname['nickname'];?>" /></label></span>
 <br/>
-<button type="submit" name="sub_n" class="btn btn-success">修改昵称</button>
+<input class="btn btn-success" name="sub_n" type="submit" value="修改昵称" />
 <br/><br/>
 <!--
 头像：<br><img src="localhost:8080/codeigniter/upload_head/caj1455859648.jpg" />
@@ -84,16 +83,16 @@
 <span><label for="oldpass">请输入旧密码：<input type="password" class="form-control" name="oldpass" id="oldpass" /></label></span><br>
 <span><label for="newpass">请输入新密码：<input type="password" class="form-control" name="newpass" id="newpass" /></label></span><br>
 <span><label for="newpassagain">请再次输入新密码：<input type="password" class="form-control" name="newpassagain" id="newpassagain" /></label></span><br>
-<button type="submit" name="sub_p" class="btn btn-success">更改密码</button>
+<input class="btn btn-success" name="sub_p" type="submit" value="更改密码" />
 </div>
 </form>
 		<!--jquery2.1.4-->
-		<script type="text/javascript" src="Public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/jquery.min.js");?>"></script>
 		<!--bootstrap-->
-		<script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/bootstrap.min.js");?>"></script>
 		<!--flat-ui-->
-		<script type="text/javascript" src="Public/js/flat-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/flat-ui.min.js");?>"></script>
 		<!-- MyJS -->
-		<script type="text/javascript" src="Public/js/main.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/main.js");?>"></script>
 </body>
 </html>

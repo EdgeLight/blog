@@ -4,11 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<!-- Bootstarp-css -->
-	<link rel="stylesheet" type="text/css" href="Public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/bootstrap.min.css");?>">
 	<!-- Flat UI-css -->
-	<link rel="stylesheet" type="text/css" href="Public/css/flat-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/flat-ui.min.css");?>">
 	<!-- Mycss -->
-	<link rel="stylesheet" type="text/css" href="Public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/style.css");?>">
 <title>后台管理-博客页面</title>
 <!-- 
 <style type="text/css">
@@ -55,8 +55,6 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <!--文章-->
-            <li class="active"><a href="#">文章</a></li>
             <!--个人-->
             <li><a href="/codeigniter/index.php/blog_user/user/<?php echo $session; ?>">个人</a></li>
           </ul>
@@ -79,7 +77,7 @@
 		<?php }else{?>          
 		          <div class="nav-login">
 			          <ul class="nav navbar-nav navbar-right">              
-				          <?php echo "您好，:".$uname['uname'];?>
+				          <?php echo "您好，".$uname['uname'];?>
 			          <button type="button" class="btn btn-success"><a href="/codeigniter/index.php/blog_loginout/loginout" class="co-white">退出</a></button>
 		              </ul>
 		          </div>
@@ -162,9 +160,9 @@
 			<td class="col-md-1"><?php echo $blog[$id]['comment_num'];?></td>
 			<td class="col-md-2"><?php echo substr($blog[$id]['content'],0,150);?></td>
 			<td class="col-md-1"><form action="<?php echo "/codeigniter/index.php/blog_b/delete_blog/".$blog[$id]['cid'];?>" method="post">
-			<button type="submit" name="sub_del" class="btn btn-danger"  data-placement="top" data-toggle="tooltip" title="确定删除这条博客?">删除</button></form></td>
+			<input class="btn btn-danger" data-placement="top" data-toggle="tooltip" title="确定删除这条博客?" name="sub_del" type="submit" value="删除" /></form></td>
 			<td><form action="<?php echo "/codeigniter/index.php/blog_b/ca_change/".$blog[$id]['cid'];?>" method="post">
-			<input type="text" name="category" class="form-control" /><br/><button type="submit" name="sub_ch" class="btn btn-info">更改类别</button></form></td>
+			<input type="text" name="category" class="form-control" /><br/><input class="btn btn-info" name="sub_ch" type="submit" value="更改类别" /></form></td>
 
 
            <!--           这里是更改类别的框(弃)
@@ -187,12 +185,12 @@
 
 </div>
 		<!--jquery2.1.4-->
-		<script type="text/javascript" src="Public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/jquery.min.js");?>"></script>
 		<!--bootstrap-->
-		<script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/bootstrap.min.js");?>"></script>
 		<!--flat-ui-->
-		<script type="text/javascript" src="Public/js/flat-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/flat-ui.min.js");?>"></script>
 		<!-- MyJS -->
-		<script type="text/javascript" src="Public/js/main.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/main.js");?>"></script>
 </body>
 </html>

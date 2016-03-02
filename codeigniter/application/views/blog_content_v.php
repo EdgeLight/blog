@@ -4,11 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<!-- Bootstarp-css -->
-	<link rel="stylesheet" type="text/css" href="Public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/bootstrap.min.css");?>">
 	<!-- Flat UI-css -->
-	<link rel="stylesheet" type="text/css" href="Public/css/flat-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/flat-ui.min.css");?>">
 	<!-- Mycss -->
-	<link rel="stylesheet" type="text/css" href="Public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("Public/css/style.css");?>">
 </head>
 <body>
 
@@ -21,8 +21,6 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <!--文章-->
-            <li class="active"><a href="#">文章</a></li>
             <!--个人-->
             <li><a href="/codeigniter/index.php/blog_user/user/<?php echo $session; ?>">个人</a></li>
           </ul>
@@ -45,7 +43,7 @@
 		<?php }else{?>          
 		          <div class="nav-login">
 			          <ul class="nav navbar-nav navbar-right">              
-				          <?php echo "您好，:".$uname['uname'];?>
+				          <?php echo "您好，".$uname['uname'];?>
 			          <button type="button" class="btn btn-success"><a href="/codeigniter/index.php/blog_loginout/loginout" class="co-white">退出</a></button>
 		              </ul>
 		          </div>
@@ -63,17 +61,17 @@
 		内容:<textarea rows="5" cols="50" name="content" class="form-control col-md-8"></textarea>
 		<br/>
 		<br/>
-		<button type="submit" name="submit" class="btn btn-success">发布博客</button>
+		<input class="btn btn-success" name="submit" type="submit" value="发布博客" />
 	</form>
 </div>
 
 		<!--jquery2.1.4-->
-		<script type="text/javascript" src="Public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/jquery.min.js");?>"></script>
 		<!--bootstrap-->
-		<script type="text/javascript" src="Public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/bootstrap.min.js");?>"></script>
 		<!--flat-ui-->
-		<script type="text/javascript" src="Public/js/flat-ui.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/flat-ui.min.js");?>"></script>
 		<!-- MyJS -->
-		<script type="text/javascript" src="Public/js/main.js"></script>
+		<script type="text/javascript" src="<?php echo base_url("Public/js/main.js");?>"></script>
 </body>
 </html>
